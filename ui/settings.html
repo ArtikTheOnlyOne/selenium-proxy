@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Selenium Proxy Extension by ArtikTheOnlyOne</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="../scripts/settings.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anta&family=Encode+Sans:wght@100..900&family=Permanent+Marker&family=Zen+Dots&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="title">
+            <h1>Selenium Proxy Extension</h1>
+            <p class="credit">by ArtikTheOnlyOne</p>
+        </div>
+
+        <div class="status">
+            <h4>Your connection status is</h4>
+            <input id="status" type="text" status="false" readonly value="false">
+        </div>
+
+        <div class="proxy">
+            <select id="scheme">
+                <option value="http">http</option>
+                <option value="https">https</option>
+                <option value="socks5">socks5</option>
+            </select>
+
+            <br>
+
+            <input id="host" placeholder="proxy.example.com">
+            <input id="port" placeholder="8080" type="number">
+            <input id="username" placeholder="username (optional)">
+            <input id="password" placeholder="password (optional)" type="password">
+        </div>
+
+        <div class="controls">
+            <button id="enable">Enable</button>
+            <button id="disable">Disable</button>
+        </div>
+
+        <div class="selenium">
+            <img src="../icons/selenium.png">
+            <p>Selenium-ready</p>
+        </div>
+    </body>
+</html>

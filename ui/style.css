@@ -1,0 +1,144 @@
+body {
+    width: 400px;
+    height: 480px;
+    font-family: "Encode Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.title h1 {
+    margin: 0;
+    padding: 0;
+    font-family: "Zen Dots", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.title p {
+    font-size: 8px;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    padding-right: 64px;
+}
+
+.status {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.status input {
+    font-weight: 800;
+    font-style: bold;
+}
+
+#status {
+    margin: 4px;
+    border: 0;
+    width: 64px;
+}
+
+#status[status="true"] {
+    color: rgb(67, 176, 42);
+}
+
+#status[status="false"] {
+    color: rgb(200, 16, 46);
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 16px;
+}
+
+.proxy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin: 4px;
+    font-family: "Encode Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+select {
+    font-family: "Encode Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.selenium {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.selenium img {
+    width: 64px;
+    height: 64px;
+}
+
+.selenium p {
+    font-size: 40px;
+    margin: 0;
+    color: rgb(67, 176, 42);
+}
+
+button {
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    border: 4px solid rgb(67, 176, 42);
+    border-radius: 8px;
+    font-family: "Encode Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    width: 160px;
+    height: 64px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+button[id="enable"] {
+    border: 4px solid rgb(67, 176, 42);
+    background-color: rgba(67, 176, 42, 0.2);
+}
+
+button[id="disable"] {
+    border: 4px solid rgb(200, 16, 46);
+    background-color: rgba(200, 16, 46, 0.2);
+}
