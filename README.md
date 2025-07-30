@@ -33,37 +33,48 @@ This is a Chrome extension that lets you configure, enable, and disable HTTP/HTT
 - Enter the proxy host, port, and optional username/password.
 - Click Зберегти та Увімкнути to apply the proxy.
 - Click Вимкнути Проксі to revert to a direct connection.
-- The badge will display ON (green) or OFF (gray) reflecting the current state.
+- The badge will display ON (green) or OFF (red) reflecting the current state.
 
 ## Script (Python + Selenium)
 
 Use Selenium’s execute_script or execute_async_script to send commands without opening the UI.
-from selenium import webdriver
 
 ```python
+from selenium import webdriver
 options = webdriver.ChromeOptions()
-options.add_argument('--load-extension=/path/to/extension')
+options.add_argument("--load-extension=/path/to/extension")
 driver = webdriver.Chrome(options=options)
-driver.get('about:blank')
+driver.get("about:blank")
 ```
 
-Enable proxy with new settings:
+Set proxy:
 
 ```python
 driver.execute_script("""
     window.postMessage({
-        direction: 'toExtension',
+        direction: "toExtension",
         msg: {
-        action: 'applyProxy',
-        config: {
-            scheme:   'http',
-            host:     '123.45.67.89',
-            port:     8080,
-            username: 'user',
-            password: 'pass'
+            action: "setProxy",
+            config: {
+                scheme:   "http",
+                host:     "123.45.67.89",
+                port:      8080,
+                username: "user",
+                password: "pass"
+            }
         }
-        }
-    }, '*');
+    }, "*");
+""")
+```
+
+Enable proxy:
+
+```python
+driver.execute_script("""
+    window.postMessage({
+        direction: "toExtension",
+        msg: { action: "enableProxy" }
+    }, "*");
 """)
 ```
 
@@ -72,27 +83,30 @@ Disable proxy:
 ```python
 driver.execute_script("""
     window.postMessage({
-        direction: 'toExtension',
-        msg: { action: 'disableProxy' }
-    }, '*');
+        direction: "toExtension",
+        msg: { action: "disableProxy" }
+    }, "*");
 """)
 ```
+
+*Note - enabling or disabling proxy without setting them first will have no result*
 
 Check proxy status (returns True or False):
 
 ```python
 status = driver.execute_async_script("""
     const callback = arguments[0];
-    window.addEventListener('message', function handler(e) {
-        if (e.data.direction === 'fromExtension') {
-        window.removeEventListener('message', handler);
-        callback(e.data.response.enabled);
+    window.addEventListener("message", function handler(e) {
+        if (e.data.direction === "fromExtension") {
+            window.removeEventListener("message", handler);
+            callback(e.data.response.enabled);
         }
     });
-    window.postMessage({ direction: 'toExtension', msg: { action: 'getStatus' } }, '*');
+    window.postMessage({ direction: "toExtension", msg: { action: "getStatus" } }, "*");
 """)
-print('Proxy enabled?', status)
 ```
+
+*Detailed usage examples can be seen in usage.py*
 
 ---
 

@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         chrome.runtime.sendMessage(
-        { action: "applyProxy", config: cfg },
+        { action: "setProxy", config: cfg },
         resp => {
             if (resp.status === "ok") renderStatus(true);
         }
