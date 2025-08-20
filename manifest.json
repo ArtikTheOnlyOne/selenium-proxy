@@ -1,10 +1,12 @@
 {
 	"version": "1.3.3.7",
 	"manifest_version": 3,
-	"name": "Selenium Proxy Extension by ArtikTheOnlyOne",
+	"name": "Selenium Proxy Extension",
+	"short_name": "Selenium Proxy",
+	"description": "This is a Chrome extension that lets you use HTTP, HTTPS and SOCKS proxy easily",
+	"homepage_url": "https://github.com/ArtikTheOnlyOne/selenium-proxy",
 	"permissions": [
 		"proxy",
-		"tabs",
 		"unlimitedStorage",
 		"storage",
 		"webRequest",
@@ -24,7 +26,7 @@
 	},
 	"action": {
 		"default_icon": "icons/selenium.png",
-		"default_title": "Selenium Proxy Extension by ArtikTheOnlyOne",
+		"default_title": "Selenium Proxy Extension",
 		"default_popup": "ui/settings.html"
 	},
 	"content_scripts": [
