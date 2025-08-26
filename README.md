@@ -4,6 +4,10 @@ This is a Chrome extension that lets you configure, enable, and disable HTTP/HTT
 
 ---
 
+This extension is also available from [Chrome Web Store](https://chromewebstore.google.com/detail/selenium-proxy-extension/acehleigfccaaodbjkfdidkpclaiegmp)
+
+---
+
 ## Features
 
 - UI popup for entering proxy settings (scheme, host, port, credentials)
